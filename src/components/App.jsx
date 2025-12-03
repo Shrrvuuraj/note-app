@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Input from "./Input";
 import List from "./List";
+import Search from "./Search";
 
 const App = () => {
   const [notes,setNotes]=useState({})
@@ -15,6 +16,7 @@ const App = () => {
           <p className="absolute top-40 left-40  translate-x-20 ">App</p>
         </div>
         <Input notes={notes} setNotes={setNotes}/>
+        <Search notes={notes}/>
       </div>
       <List notes={notes}/>
     </div>
