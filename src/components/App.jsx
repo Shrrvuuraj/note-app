@@ -5,7 +5,9 @@ import List from "./List";
 import Search from "./Search";
 
 const App = () => {
+   const [seacrh, setsearch] = useState("");
   const [notes,setNotes]=useState({})
+  const [mainsearch,setMainsearch]=useState({})
   return (
     <div className="w-full h-screen bg-fuchsia-100">
       <Navbar />
@@ -16,11 +18,11 @@ const App = () => {
           <p className="absolute top-40 left-40  translate-x-20 ">App</p>
         </div>
         <Input notes={notes} setNotes={setNotes}/>
-        <Search notes={notes}/>
+        <Search notes={notes} search={seacrh} setsearch={setsearch} mainsearch={mainsearch} setMainsearch={setMainsearch}/>
       </div>
-      <List notes={notes}/>
+      <List notes={notes} seacrh={seacrh} mainsearch={mainsearch}/>
     </div>
   );
-};
+}; 
 
 export default App;

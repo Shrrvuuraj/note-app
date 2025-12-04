@@ -1,12 +1,15 @@
-import React, { useState } from "react";
 
-const Search = ({ notes }) => {
+
+const Search = ({ notes, seacrh, setsearch,setMainsearch,mainsearch }) => {
   function search() {
-    const mainsearch= Object.entries(notes).filter(([key,value])=>key==seacrh )
-    console.log(mainsearch)
-//     console.log(notes)
+     setMainsearch(Object.entries(notes).filter(
+      ([key, value]) => key == seacrh
+    ));
+    console.log(mainsearch);
+    console.log(notes)
+   
   }
-  const [seacrh, setsearch] = useState("");
+
   return (
     <div className="outline">
       <input
@@ -19,7 +22,7 @@ const Search = ({ notes }) => {
         }}
       />
       <button onClick={search}>search</button>
-      <input type="radio" className=""value="h"/>
+      <input type="radio" className="" value="h" />
       <input type="radio" className="" value="h" />
     </div>
   );
