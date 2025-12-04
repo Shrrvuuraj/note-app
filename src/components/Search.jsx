@@ -1,14 +1,14 @@
+import { useState } from "react";
 
 
-const Search = ({ notes, seacrh, setsearch,setMainsearch,mainsearch }) => {
-  function search() {
-     setMainsearch(Object.entries(notes).filter(
-      ([key, value]) => key == seacrh
-    ));
-    console.log(mainsearch);
-    console.log(notes)
+const Search = ({ notes, setSearch }) => {
+  function found() { 
+     const result=Object.entries(notes).filter(([key,value])=>key.toLowerCase().includes(query.toLowerCase()))
+     setSearch(result)
+    setQuery("")
    
   }
+  const [query,setQuery]=useState("")
 
   return (
     <div className="outline">
@@ -16,12 +16,13 @@ const Search = ({ notes, seacrh, setsearch,setMainsearch,mainsearch }) => {
         type="text"
         className="outline"
         placeholder="search"
-        value={seacrh}
+        value={query}
         onChange={(e) => {
-          setsearch(e.target.value);
-        }}
+          setQuery(e.target.value);
+        }
+      }
       />
-      <button onClick={search}>search</button>
+      <button onClick={found}>search</button>
       <input type="radio" className="" value="h" />
       <input type="radio" className="" value="h" />
     </div>
