@@ -23,8 +23,8 @@ const Input = ({notes,setNotes}) => {
   }
   
   return (
-    <div className="outline m-10">
-      <div>
+    < >
+      <div className="outline-4 outline-purple-400">
         <input
           type="text"
           className="outline "
@@ -48,7 +48,7 @@ const Input = ({notes,setNotes}) => {
         />
       </div>
       <button onClick={addNote}>add</button>
-    </div>
+    </>
   );
 };
 

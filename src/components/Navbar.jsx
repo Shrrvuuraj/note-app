@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="w-screen h-20 bg-fuchsia-300  flex flex-row justify-between items-center p-10 ">
-      <img className="w-10 h-10" src="search2.png" alt="  " />
+      <h2>Note App</h2>
       <div className=" flex w-25 justify-between
       ">
         <button className="" >Login</button>
